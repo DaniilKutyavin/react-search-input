@@ -1,12 +1,12 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import Input from "./components/Input";
 import Results from "./components/Results";
 
-export default class ReactSearchInput extends PureComponent {
+class ReactSearchInput extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,7 +17,6 @@ export default class ReactSearchInput extends PureComponent {
   }
 
   render() {
-    const { value } = this.state;
 
     return (
       <div id="react-search-input">
@@ -27,3 +26,13 @@ export default class ReactSearchInput extends PureComponent {
     );
   }
 }
+
+ReactSearchInput.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.any)
+};
+
+ReactSearchInput.defaultProps = {
+  data: []
+};
+
+export default ReactSearchInput;
