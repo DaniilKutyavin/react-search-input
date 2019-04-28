@@ -15,7 +15,16 @@ class ReactSearchInput extends PureComponent {
   }
 
   handleChange(e) {
-    this.setState({ value: e.currentTarget.value });
+    const inputValue = e.currentTarget.value;
+    const { data } = this.props;
+    const newResult = data.filter(datasetItem =>
+      datasetItem.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
+    this.setState({
+      value: inputValue,
+      result: newResult
+    });
   }
 
   render() {
