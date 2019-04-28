@@ -1,0 +1,9 @@
+# dependecies
+node_modules
+
+#vs code config
+jsconfig.json
+
+# lock files
+yarn.lock
+package-lock.json
