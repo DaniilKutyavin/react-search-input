@@ -7,3 +7,6 @@ jsconfig.json
 # lock files
 yarn.lock
 package-lock.json
+
+# dist
+dist
