@@ -1,12 +1,14 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Input from "./components/Input";
-import Results from "./components/Results";
+import Result from "./components/Result";
 
 class ReactSearchInput extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      value: "",
+      result: props.data
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,11 +19,12 @@ class ReactSearchInput extends PureComponent {
   }
 
   render() {
+    const { value, result } = this.state;
 
     return (
       <div id="react-search-input">
         <Input value={value} onChange={this.handleChange} />
-        <Results />
+        <Result result={result} />
       </div>
     );
   }
